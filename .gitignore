@@ -1,0 +1,43 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+
+# Plugin manager state and data
+lazy-lock.json
+
+# LSP and language server logs
+.neoconf.json
+
+# Runtime directories that get created
+plugin/
+after/plugin/
+
+# Backup and swap files
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+
+# Undo history files  
+*.un~
+
+# Session files
+Session.vim
+.session
+
+# View files
+.netrwhist
+
+# Spell files
+*.spl
+*.sug
+
+# OS-specific
+.DS_Store
+Thumbs.db
