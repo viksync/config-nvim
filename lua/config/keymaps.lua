@@ -47,4 +47,7 @@ map("i", "<C-x>", "<ESC>:w<CR>:qa!<CR>", { desc = "Save and Exit" })
 -- Save with Cmd+S (Mac)
 vim.keymap.set("n", "<D-s>", "<cmd>w<cr>", { desc = "Save file" })
 vim.keymap.set("i", "<D-s>", "<esc><cmd>w<cr>a", { desc = "Save file" })
--- lkjlk
+
+-- vim.keymap.set("n", "<leader>tt", function() vim.cmd("ColorschemeSwitch tokyonight-moon") end)
+-- vim.keymap.set("n", "<leader>tg", function() vim.cmd("ColorschemeSwitch gruvbox-material") end)
+-- vim.keymap.set("n", "<leader>tp", function() vim.cmd("ColorschemeSwitch catppuccin") end)
