@@ -1,18 +1,11 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
 
 local map = vim.keymap.set
 local nomap = vim.keymap.del
 
 -- leader j - join lines
 -- J - 5j
-
---[[
-Better escape
-map("i", "jj", "<ESC>")
-map("i", "jk", "<ESC>A")
---]]
 
 -- NvChad insert movements
 map("i", "<C-b>", "<ESC>^i", { desc = "Move beginning of line" })

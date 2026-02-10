@@ -4,4 +4,5 @@
 local opt = vim.opt
 
 opt.wrap = true
--- opt.colorcolumn = "80" -- show a vertical guide
+opt.relativenumber = false
+opt.colorcolumn = "80" -- show a vertical guide

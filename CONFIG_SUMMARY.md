@@ -33,10 +33,6 @@
 
 ## Terminal Integration
 - **toggleterm**: `<leader>j` toggles floating terminal
-- **Claude Code** (`<C-,>`): Integrated with floating window (80% width/height)
-  - Variants: `<leader>cC` (continue), `<leader>cV` (verbose)
-  - Auto sets CWD to git root
-  - File refresh enabled with 1s polling
 
 ## Code Quality & Formatting
 **Linter**: ESLint (auto-configured via root_dir detection)
