@@ -5,4 +5,6 @@ local opt = vim.opt
 
 opt.wrap = true
 opt.relativenumber = false
-opt.colorcolumn = "80" -- show a vertical guide
+opt.colorcolumn = "80"
+
+vim.g.lazyvim_mini_snippets_in_completion = false

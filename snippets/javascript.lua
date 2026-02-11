@@ -1,0 +1,7 @@
+return {
+	{
+		prefix = "clg",
+		body = { "console.log(${0});" },
+		description = "console.log()",
+	},
+}
