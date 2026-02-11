@@ -3,12 +3,10 @@ return {
 		"akinsho/toggleterm.nvim",
 		cmd = "ToggleTerm",
 		keys = {
-			{ "<leader>t", "<cmd>ToggleTerm<cr>", desc = "Toggle floating terminal" },
-			-- { "<leader>v", "<cmd>ToggleTerm direction=vertical size=60<cr>", desc = "Vertical terminal" },
-			-- { "<leader>h", "<cmd>ToggleTerm direction=horizontal size=15<cr>", desc = "Horizontal terminal" },
+			{ "<C-n>", "<cmd>ToggleTerm<cr>", desc = "Toggle floating terminal" },
 		},
 		opts = {
-			open_mapping = [[<leader>t]], -- still works for float
+			open_mapping = [[<C-n>]], -- still works for float
 			direction = "float", -- default
 			shade_filetypes = {},
 			hide_numbers = true,

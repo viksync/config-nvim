@@ -4,9 +4,6 @@
 local map = vim.keymap.set
 local nomap = vim.keymap.del
 
--- leader j - join lines
--- J - 5j
-
 -- NvChad insert movements
 map("i", "<C-b>", "<ESC>^i", { desc = "Move beginning of line" })
 map("i", "<C-e>", "<End>", { desc = "Move end of line" })
@@ -22,9 +19,6 @@ map("n", "s", "s")
 map("n", "<leader>/", "gcc", { desc = "Toggle Comment", remap = true })
 map("v", "<leader>/", "gc", { desc = "Toggle comment", remap = true })
 
--- Live grep from root remapping
--- map("n", "<leader>z", "<cmd>Telescope live_grep<cr>", { noremap = true, silent = true })
-
 map("n", "<leader>q", "<cmd>qa<cr>", { desc = "Quit All" })
 map("n", "Y", "<cmd>%y+<CR>", { desc = "Yank whole file" })
 
@@ -34,7 +28,7 @@ map("n", "D", "dd")
 map("n", "x", '"_x')
 
 -- Fast write file
--- map("i", "<C-c><C-c>", "<ESC>:w<CR>", { desc = "Exit INSERT and write" })
+map("i", "<C-c>", "<ESC>:w<CR>", { desc = "Exit INSERT and write" })
 map("i", "<C-x>", "<ESC>:w<CR>:qa!<CR>", { desc = "Save and Exit" })
 
 -- Save with Cmd+S (Mac)
