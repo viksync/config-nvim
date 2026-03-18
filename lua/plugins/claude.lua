@@ -3,22 +3,35 @@ return {
 	dependencies = { "folke/snacks.nvim" },
 	config = true,
 	keys = {
-		{ "<leader>a", nil, desc = "AI/Claude Code" },
-		{ "<leader>ac", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
-		{ "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
-		{ "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
-		{ "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
-		{ "<leader>am", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
-		{ "<leader>ab", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
-		{ "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
 		{
-			"<leader>as",
-			"<cmd>ClaudeCodeTreeAdd<cr>",
-			desc = "Add file",
-			ft = { "NvimTree", "neo-tree", "oil", "minifiles", "netrw" },
+			"<leader>ac",
+			function()
+				local cc = require("claudecode")
+				if cc.is_claude_connected() then
+					vim.fn.jobstart({ "zellij", "action", "focus-next-pane" })
+				else
+					local port = require("claudecode.server.init").get_status().port
+					if not port then
+						vim.notify("claudecode.nvim server not running", vim.log.levels.ERROR)
+						return
+					end
+					local env = "CLAUDE_CODE_SSE_PORT=" .. port .. " ENABLE_IDE_INTEGRATION=true"
+					vim.fn.jobstart({
+						"zellij",
+						"run",
+						"--direction",
+						"right",
+						"--close-on-exit",
+						"--name",
+						"claude-code",
+						"--",
+						"sh",
+						"-c",
+						env .. " claude",
+					})
+				end
+			end,
+			desc = "Open Claude Code in new Zellij pane",
 		},
-		-- Diff management
-		{ "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Accept diff" },
-		{ "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Deny diff" },
 	},
 }
